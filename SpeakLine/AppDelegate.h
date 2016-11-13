@@ -8,13 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSSpeechSynthesizerDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSSpeechSynthesizerDelegate, NSTableViewDataSource, NSTableViewDelegate>
 @property (weak) IBOutlet NSTextField *textField;
 
-@property (strong) NSSpeechSynthesizer* synth;
+@property (strong) NSSpeechSynthesizer *synth;
 
-@property (weak) IBOutlet NSButton * startBtn;
-@property (weak) IBOutlet NSButton * stopBtn;
+@property (weak) IBOutlet NSButton *startBtn;
+@property (weak) IBOutlet NSButton *stopBtn;
+
+@property (strong) NSArray *voices;
+@property (strong) IBOutlet NSTableView *voiceTableView;
 
 @end
 
